@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Now - BookEasy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #F4F1EB;
+      color: #050315;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .primary-button {
+      background-color: #FF9800;
+      color: #F4F1EB;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .primary-button:hover {
+      background-color: #e68900;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white py-4 px-6 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-[#1E0D73]">BookEasy</h1>
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="C:\Users\KIIT\OneDrive\Desktop\BookEasy.html" class="hover:text-[#FF9800]">Home</a>
+      <a href="C:\Users\KIIT\OneDrive\Desktop\browse.html" class="hover:text-[#FF9800]">Browse</a>
+      <a href="C:\Users\KIIT\OneDrive\Desktop\mybookings.html" class="hover:text-[#FF9800]">My Bookings</a>
+      <a href="C:\Users\KIIT\OneDrive\Desktop\business.html" class="hover:text-[#FF9800]">Business</a>
+      <a href="C:\Users\KIIT\OneDrive\Desktop\signup.html" class="hover:text-[#FF9800]">Sign Up</a>
+      <a href="C:\Users\KIIT\OneDrive\Desktop\login.html" class="hover:text-[#FF9800]">Login</a>
+    </nav>
+  </header>
+
+  <main class="max-w-3xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold text-[#1E0D73] mb-6 text-center">Complete Your Booking</h2>
+
+    <form class="space-y-6 bg-white p-8 rounded-xl shadow-lg">
+      <div>
+        <label class="block mb-2 font-medium">Name</label>
+        <input type="text" placeholder="Your full name" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-[#FF9800]"/>
+      </div>
+      <div>
+        <label class="block mb-2 font-medium">Date</label>
+        <input type="date" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-[#FF9800]"/>
+      </div>
+      <div>
+        <label class="block mb-2 font-medium">Time</label>
+        <input type="time" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-[#FF9800]"/>
+      </div>
+      <div>
+        <label class="block mb-2 font-medium">Notes</label>
+        <textarea rows="4" placeholder="Any special requirements?" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-[#FF9800]"></textarea>
+      </div>
+      <button type="submit" class="primary-button w-full">Confirm Booking</button>
+    </form>
+  </main>
+
+  <footer class="text-center py-6 bg-[#1E0D73] text-[#F4F1EB] mt-12">
+    <p>&copy; 2025 BookEasy</p>
+  </footer>
+</body>
+</html>

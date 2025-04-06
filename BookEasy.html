@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BookEasy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Futura', sans-serif;
+        }
+        .primary-button, .secondary-button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .primary-button {
+            background-color: #FF6B6B;
+            color: #FFFFFF;
+        }
+        .primary-button:hover {
+            background-color: #FF4757;
+            transform: scale(1.05);
+        }
+        .primary-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .secondary-button {
+            background-color: #4299E1;
+            color: #FFFFFF;
+        }
+        .secondary-button:hover {
+            background-color: #3182CE;
+            transform: scale(1.05);
+        }
+        .secondary-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .listing-card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+        .listing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .listing-card img {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .text-primary { color: #2D3748; }
+        .text-secondary { color: #FF6B6B; }
+        .bg-off-white { background-color: #F7FAFC; }
+        .text-dark-grey { color: #4A5568; }
+        .border-accent { border-color: #E2E8F0; }
+    </style>
+</head>
+<body class="bg-off-white text-dark-grey">
+    <header class="bg-off-white py-4 border-b border-accent">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold text-primary">BookEasy</h1>
+            <nav class="hidden md:block" aria-label="Main Navigation">
+                <ul class="flex space-x-6">
+                    <li><a href="C:\Users\KIIT\OneDrive\Desktop\browse.html" class="hover:text-secondary transition-colors duration-300">Browse</a></li>
+                    <li><a href="C:\Users\KIIT\OneDrive\Desktop\my-bookings.html" class="hover:text-secondary transition-colors duration-300">My Bookings</a></li>
+                    <li><a href="C:\Users\KIIT\OneDrive\Desktop\business.html" class="hover:text-secondary transition-colors duration-300">For Businesses</a></li>
+                    <li><a href="C:\Users\KIIT\OneDrive\Desktop\signup.html" class="hover:text-secondary transition-colors duration-300">Sign Up</a></li>
+                    <li><a href="C:\Users\KIIT\OneDrive\Desktop\login.html" class="hover:text-secondary transition-colors duration-300">Log In</a></li>
+                </ul>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-secondary focus:outline-none focus:shadow-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-off-white shadow-lg rounded-md py-2 px-4 space-y-2">
+                    <a href="C:\Users\KIIT\OneDrive\Desktop\browse.html" class="block hover:text-secondary transition-colors duration-300">Browse</a>
+                    <a href="C:\Users\KIIT\OneDrive\Desktop\my-bookings.html" class="block hover:text-secondary transition-colors duration-300">My Bookings</a>
+                    <a href="C:\Users\KIIT\OneDrive\Desktop\business.html" class="block hover:text-secondary transition-colors duration-300">For Businesses</a>
+                    <a href="C:\Users\KIIT\OneDrive\Desktop\signup.html" class="block hover:text-secondary transition-colors duration-300">Sign Up</a>
+                    <a href="C:\Users\KIIT\OneDrive\Desktop\login.html" class="block hover:text-secondary transition-colors duration-300">Log In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <section id="hero" class="text-center py-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">Discover and Book Local Spaces & Events</h2>
+            <p class="text-lg mb-8 text-gray-600">Find gyms, co-working spaces, banquet halls, cafes, and more!</p>
+            <form id="search-form" action="C:\Users\KIIT\OneDrive\Desktop\browse.html" method="GET" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <input type="text" name="query" placeholder="Search for events or venues..." class="w-full sm:w-auto px-4 py-2 border border-accent rounded-md focus:outline-none focus:ring-2 focus:ring-secondary">
+                <button type="submit" class="primary-button">Search</button>
+            </form>
+        </section>
+
+        <section id="featured-listings" class="py-12">
+            <h3 class="text-2xl font-semibold text-primary mb-8 text-center">Featured Spaces & Events</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="listing-card">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Spacious gym with modern equipment" class="w-full h-auto">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold text-dark-grey mb-2">Awesome Gym Session</h4>
+                        <p class="text-accent mb-2">Location: City Center</p>
+                        <a href="C:\Users\KIIT\OneDrive\Desktop\book.html" class="primary-button">Book Now</a>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Creative shared co-working space" class="w-full h-auto">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold text-dark-grey mb-2">Creative Co-working Space</h4>
+                        <p class="text-accent mb-2">Location: Tech Park</p>
+                        <a href="C:\Users\KIIT\OneDrive\Desktop\book.html" class="primary-button">Book Now</a>
+                    </div>
+                </div>
+                <div class="listing-card hidden lg:block">
+                    <img src="https://placehold.co/400x300/EEE/31343C" alt="Elegant banquet hall for weddings" class="w-full h-auto">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold text-dark-grey mb-2">Banquet Hall for Events</h4>
+                        <p class="text-accent mb-2">Location: Downtown</p>
+                        <a href="C:\Users\KIIT\OneDrive\Desktop\book.html" class="primary-button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto text-center px-4">
+            <p>&copy; 2025 BookEasy</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
